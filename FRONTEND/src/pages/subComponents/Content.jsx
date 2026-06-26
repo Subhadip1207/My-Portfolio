@@ -18,7 +18,7 @@ const Content = () => {
     setLoading(true);
 
     await axios.post(
-      `https://my-portfolio-backend-krvn.onrender.com/api/v1/message/send`,
+      `https://my-portfolio-bckend.onrender.com/api/v1/message/send`,
       { senderName, subject, message },
       {
         withCredentials: true,

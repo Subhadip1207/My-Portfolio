@@ -39,7 +39,7 @@ const ViewProjects = () => {
   useEffect(() => {
     const getProject = async () => {
       await axios
-        .get(`https://my-portfolio-backend-krvn.onrender.com/api/v1/project/get/${id}`, {
+        .get(`https://my-portfolio-bckend.onrender.com/api/v1/project/get/${id}`, {
           withCredentials: true,
         })
         .then((res) => {

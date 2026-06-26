@@ -86,7 +86,7 @@ const projectSlice = createSlice({
 export const getAllProjects = () => async(dispatch) => {
     dispatch(projectSlice.actions.getAllProjectsRequest());
     try {
-        const {data} = await axios.get("https://my-portfolio-backend-krvn.onrender.com/api/v1/project/getall",{withCredentials:true});
+        const {data} = await axios.get("https://my-portfolio-bckend.onrender.com/api/v1/project/getall",{withCredentials:true});
         dispatch(projectSlice.actions.getAllProjectsSuccess(data.projects));
         dispatch(projectSlice.actions.clearAllErrors());
     } catch (error) {
@@ -98,7 +98,7 @@ export const getAllProjects = () => async(dispatch) => {
 export const addNewProject = (formData) => async(dispatch) => {
     dispatch(projectSlice.actions.addNewProjectRequest());
     try {
-        const {data} = await axios.post(`https://my-portfolio-backend-krvn.onrender.com/api/v1/project/add`, formData, {withCredentials:true, headers:{'Content-Type':'multipart/form-data'}});
+        const {data} = await axios.post(`https://my-portfolio-bckend.onrender.com/api/v1/project/add`, formData, {withCredentials:true, headers:{'Content-Type':'multipart/form-data'}});
         dispatch(projectSlice.actions.addNewProjectSuccess(data.message));
         dispatch(projectSlice.actions.clearAllErrors());
     } catch (error) {
@@ -110,7 +110,7 @@ export const addNewProject = (formData) => async(dispatch) => {
 export const deleteProject = (id) => async(dispatch) => {
     dispatch(projectSlice.actions.deleteProjectRequest());
     try {
-        const {data} = await axios.delete(`https://my-portfolio-backend-krvn.onrender.com/api/v1/project/delete/${id}`,{withCredentials:true});
+        const {data} = await axios.delete(`https://my-portfolio-bckend.onrender.com/api/v1/project/delete/${id}`,{withCredentials:true});
         dispatch(projectSlice.actions.deleteProjectSuccess(data.message));
         dispatch(projectSlice.actions.clearAllErrors());
     } catch (error) {
@@ -122,7 +122,7 @@ export const deleteProject = (id) => async(dispatch) => {
 export const updateProject = (id,newData) => async(dispatch) => {
     dispatch(projectSlice.actions.updateProjectRequest());
     try {
-        const {data} = await axios.put(`https://my-portfolio-backend-krvn.onrender.com/api/v1/project/update/${id}`, newData, {withCredentials:true , headers:{"Content-Type":"multipart/form-data"}});
+        const {data} = await axios.put(`https://my-portfolio-bckend.onrender.com/api/v1/project/update/${id}`, newData, {withCredentials:true , headers:{"Content-Type":"multipart/form-data"}});
         dispatch(projectSlice.actions.updateProjectSuccess(data.message));
         dispatch(projectSlice.actions.clearAllErrors());
     } catch (error) {

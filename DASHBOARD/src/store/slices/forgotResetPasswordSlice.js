@@ -49,7 +49,7 @@ const forgotResetPasswordSlice = createSlice({
 export const forgotPassword = (email) => async(dispatch) => {
     dispatch(forgotResetPasswordSlice.actions.forgotPasswordRequest());
     try {
-        const {data} = await axios.post('https://my-portfolio-backend-krvn.onrender.com/api/v1/user/forgot/password',{email},{
+        const {data} = await axios.post('https://my-portfolio-bckend.onrender.com/api/v1/user/forgot/password',{email},{
             withCredentials: true,
             headers: {
                 'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ export const forgotPassword = (email) => async(dispatch) => {
 export const resetPassword = (token,password,confirmPassword) => async(dispatch) => {
     dispatch(forgotResetPasswordSlice.actions.resetPasswordRequest());
     try {
-        const {data} = await axios.put(`https://my-portfolio-backend-krvn.onrender.com/api/v1/user/password/reset/${token}`, {password, confirmPassword }, {
+        const {data} = await axios.put(`https://my-portfolio-bckend.onrender.com/api/v1/user/password/reset/${token}`, {password, confirmPassword }, {
             withCredentials: true,
             headers: {
                 'Content-Type': 'application/json'

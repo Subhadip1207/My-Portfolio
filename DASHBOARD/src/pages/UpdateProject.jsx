@@ -67,7 +67,7 @@ const UpdateProject = () => {
     const getProject = async () => {
       await axios
         .get(
-          `https://my-portfolio-backend-krvn.onrender.com/api/v1/project/get/${id}`,
+          `https://my-portfolio-bckend.onrender.com/api/v1/project/get/${id}`,
           {
             withCredentials: true,
           }
