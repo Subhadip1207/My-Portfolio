@@ -71,7 +71,7 @@ const timelineSlice = createSlice({
 export const getAllTimelines = () => async(dispatch) => {
     dispatch(timelineSlice.actions.getAllTimelinesRequest());
     try {
-        const {data} = await axios.get("http://localhost:4000/api/v1/timeline/getall",{withCredentials:true});
+        const {data} = await axios.get("https://my-portfolio-backend-krvn.onrender.com/api/v1/timeline/getall",{withCredentials:true});
         dispatch(timelineSlice.actions.getAllTimelinesSuccess(data.timeLines));
         dispatch(timelineSlice.actions.clearAllErrors());
     } catch (error) {
@@ -83,7 +83,7 @@ export const getAllTimelines = () => async(dispatch) => {
 export const addNewTimeline = (formData) => async(dispatch) => {
     dispatch(timelineSlice.actions.addTimelineRequest());
     try {
-        const {data} = await axios.post(`http://localhost:4000/api/v1/timeline/add`, formData, {withCredentials:true, headers:{'Content-Type':'application/json'}});
+        const {data} = await axios.post(`https://my-portfolio-backend-krvn.onrender.com/api/v1/timeline/add`, formData, {withCredentials:true, headers:{'Content-Type':'application/json'}});
         dispatch(timelineSlice.actions.addTimelinesuccess(data.message));
         dispatch(timelineSlice.actions.clearAllErrors());
     } catch (error) {
@@ -95,7 +95,7 @@ export const addNewTimeline = (formData) => async(dispatch) => {
 export const deleteTimeline = (id) => async(dispatch) => {
     dispatch(timelineSlice.actions.deleteTimelineRequest());
     try {
-        const {data} = await axios.delete(`http://localhost:4000/api/v1/timeline/delete/${id}`,{withCredentials:true});
+        const {data} = await axios.delete(`https://my-portfolio-backend-krvn.onrender.com/api/v1/timeline/delete/${id}`,{withCredentials:true});
         dispatch(timelineSlice.actions.deleteTimelinesuccess(data.message));
         dispatch(timelineSlice.actions.clearAllErrors());
     } catch (error) {

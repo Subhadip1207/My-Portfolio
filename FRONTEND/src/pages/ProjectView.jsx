@@ -19,7 +19,7 @@ const ProjectView = () => {
     const getProject = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:4000/api/v1/project/get/${id}`,
+          `https://my-portfolio-backend-krvn.onrender.com/api/v1/project/get/${id}`,
           { withCredentials: true }
         );
 

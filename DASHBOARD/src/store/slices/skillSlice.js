@@ -86,7 +86,7 @@ const skillSlice = createSlice({
 export const getAllskills = () => async(dispatch) => {
     dispatch(skillSlice.actions.getAllSkillsRequest());
     try {
-        const {data} = await axios.get("http://localhost:4000/api/v1/skill/getall",{withCredentials:true});
+        const {data} = await axios.get("https://my-portfolio-backend-krvn.onrender.com/api/v1/skill/getall",{withCredentials:true});
         dispatch(skillSlice.actions.getAllSkillsSuccess(data.skills));
         dispatch(skillSlice.actions.clearAllErrors());
     } catch (error) {
@@ -98,7 +98,7 @@ export const getAllskills = () => async(dispatch) => {
 export const addNewSkill = (formData) => async(dispatch) => {
     dispatch(skillSlice.actions.addNewSkillRequest());
     try {
-        const {data} = await axios.post(`http://localhost:4000/api/v1/skill/add`, formData, {withCredentials:true, headers:{'Content-Type':'multipart/form-data'}});
+        const {data} = await axios.post(`https://my-portfolio-backend-krvn.onrender.com/api/v1/skill/add`, formData, {withCredentials:true, headers:{'Content-Type':'multipart/form-data'}});
         dispatch(skillSlice.actions.addNewSkillSuccess(data.message));
         dispatch(skillSlice.actions.clearAllErrors());
     } catch (error) {
@@ -110,7 +110,7 @@ export const addNewSkill = (formData) => async(dispatch) => {
 export const deleteSkill = (id) => async(dispatch) => {
     dispatch(skillSlice.actions.deleteSkillRequest());
     try {
-        const {data} = await axios.delete(`http://localhost:4000/api/v1/skill/delete/${id}`,{withCredentials:true});
+        const {data} = await axios.delete(`https://my-portfolio-backend-krvn.onrender.com/api/v1/skill/delete/${id}`,{withCredentials:true});
         dispatch(skillSlice.actions.deleteSkillsuccess(data.message));
         dispatch(skillSlice.actions.clearAllErrors());
     } catch (error) {
@@ -122,7 +122,7 @@ export const deleteSkill = (id) => async(dispatch) => {
 export const updateSkill = (id, proficiency) => async(dispatch) => {
     dispatch(skillSlice.actions.updateSkillRequest());
     try {
-        const {data} = await axios.put(`http://localhost:4000/api/v1/skill/update/${id}`, {proficiency}, {withCredentials:true, headers:{'Content-Type':'application/json'}});
+        const {data} = await axios.put(`https://my-portfolio-backend-krvn.onrender.com/api/v1/skill/update/${id}`, {proficiency}, {withCredentials:true, headers:{'Content-Type':'application/json'}});
         dispatch(skillSlice.actions.updateSkillsuccess(data.message));
         dispatch(skillSlice.actions.clearAllErrors());
     } catch (error) {

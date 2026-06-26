@@ -86,7 +86,7 @@ const languageSlice = createSlice({
 export const getAllLanguages = () => async(dispatch) => {
     dispatch(languageSlice.actions.getAllLanguagesRequest());
     try {
-        const {data} = await axios.get("http://localhost:4000/api/v1/language/getall",{withCredentials:true});
+        const {data} = await axios.get("https://my-portfolio-backend-krvn.onrender.com/api/v1/language/getall",{withCredentials:true});
         dispatch(languageSlice.actions.getAllLanguagesSuccess(data.languages));
         dispatch(languageSlice.actions.clearAllErrors());
     } catch (error) {
@@ -98,7 +98,7 @@ export const getAllLanguages = () => async(dispatch) => {
 export const addNewLanguage = (formData) => async(dispatch) => {
     dispatch(languageSlice.actions.addNewLanguageRequest());
     try {
-        const {data} = await axios.post(`http://localhost:4000/api/v1/language/add`, formData, {withCredentials:true, headers:{'Content-Type':'multipart/form-data'}});
+        const {data} = await axios.post(`https://my-portfolio-backend-krvn.onrender.com/api/v1/language/add`, formData, {withCredentials:true, headers:{'Content-Type':'multipart/form-data'}});
         dispatch(languageSlice.actions.addNewLanguageSuccess(data.message));
         dispatch(languageSlice.actions.clearAllErrors());
     } catch (error) {
@@ -110,7 +110,7 @@ export const addNewLanguage = (formData) => async(dispatch) => {
 export const deleteLanguage = (id) => async(dispatch) => {
     dispatch(languageSlice.actions.deleteLanguageRequest());
     try {
-        const {data} = await axios.delete(`http://localhost:4000/api/v1/language/delete/${id}`,{withCredentials:true});
+        const {data} = await axios.delete(`https://my-portfolio-backend-krvn.onrender.com/api/v1/language/delete/${id}`,{withCredentials:true});
         dispatch(languageSlice.actions.deleteLanguagesuccess(data.message));
         dispatch(languageSlice.actions.clearAllErrors());
     } catch (error) {
@@ -122,7 +122,7 @@ export const deleteLanguage = (id) => async(dispatch) => {
 export const updateLanguage = (id, proficiency) => async(dispatch) => {
     dispatch(languageSlice.actions.updateLanguageRequest());
     try {
-        const {data} = await axios.put(`http://localhost:4000/api/v1/language/update/${id}`, {proficiency}, {withCredentials:true, headers:{'Content-Type':'application/json'}});
+        const {data} = await axios.put(`https://my-portfolio-backend-krvn.onrender.com/api/v1/language/update/${id}`, {proficiency}, {withCredentials:true, headers:{'Content-Type':'application/json'}});
         dispatch(languageSlice.actions.updateLanguagesuccess(data.message));
         dispatch(languageSlice.actions.clearAllErrors());
     } catch (error) {
