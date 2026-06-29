@@ -56,7 +56,7 @@ const Portfolio = () => {
             drop-shadow-[0_0_25px_rgba(59,130,246,0.6)]
           '
         >
-          Portfolio
+          PROJECTS
         </h1>
 
         {/* Glow */}

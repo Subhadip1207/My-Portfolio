@@ -60,7 +60,7 @@ const MyApps = () => {
               drop-shadow-[0_0_25px_rgba(59,130,246,0.7)]
             '
           >
-            My Apps
+            KNOWN SOFTWARES
           </h1>
 
           <Sparkles
